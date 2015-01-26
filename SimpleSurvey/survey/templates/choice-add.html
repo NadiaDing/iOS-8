@@ -1,0 +1,59 @@
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        
+        <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>   
+ <body>
+    <style type="text/css">
+        .centerdv
+        {
+            margin-top: 5%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;  
+        }
+        .centerform
+        {
+            margin-left: auto;
+            margin-right: auto;
+            width:45%;
+            
+        }
+        
+    </style>
+    
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="nav-brand" href={% url 'root' %}>Survey Site</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href={% url 'admin-survey-create-view' %}>Create Survey</a></li>
+                <li><a href={%url 'admin-panel' %}>View Survey Data</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="centerdv container">
+        <div class="page-header">
+            <h2>Add a choice to {{question.question_text}}</h2>
+        </div>
+        <br>
+        <form method="post" class="centerfrom" action={% url 'admin-choice-add' %}>
+            {% csrf_token %}
+            <b>Choice Text:</b>
+            <input type="text" class="form-control" name="choice_text">
+            <br>
+            <input type="submit" class="btn btn-primary" value="Add choice">
+            <p>
+            <a href={% url 'admin-panel' %} class="btn btn-success">Finish</a>
+            <a href={%  url 'admin-question-add-view' %} class="btn btn-primary">New Question</a>
+            </p>
+        </form>
+    </div>
+ </body>
+</html>

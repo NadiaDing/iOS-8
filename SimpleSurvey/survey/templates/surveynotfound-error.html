@@ -1,0 +1,28 @@
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        
+        <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>   
+ <body>
+    <style type="text/css">
+        .centerdv
+        {
+            margin-top: 5%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;  
+        }
+        
+    </style>
+    
+    <div class="jumbotron container centerdv">
+        <h1>Survey # {{sv_id}} does not exist </h1>
+         <a class="btn btn-info btn-lg" role="button" href={% url 'root' %}>Return to the main page!</a>
+    </div>
+    
+ </body>
+</html>
